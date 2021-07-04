@@ -1,0 +1,77 @@
+
+.heading-starting{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: #6d55f1;
+    text-align: left;
+}
+#nav-brand{
+  color: #6d55f1;
+  font-size: 50px;
+  font-weight: bold;
+}
+#btn-outline{
+  border-color: #6d55f1;
+  color: #6d55f1;
+}
+#btn-practice{
+  background-color: #6d55f1;
+  border-color: #6d55f1;
+  white-space: nowrap;
+   text-align: center;
+}
+.span{
+  color: rgb(35, 235, 35);
+  font-size: 50px;
+  font-weight: bold;
+}
+.heading-starting{
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: justify;
+}
+.text-block{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    color: #000;
+    text-align: left;
+}
+#img-job-interview{
+  
+  width: 393.83px;
+  height: 295.37px;
+  left: 662.32px;
+  top: 98.39px;
+}
+
+.testimonals{
+  height: 200px;
+  background: rgba(6, 204, 171, 0.37);
+  border-radius: 10px;
+}
+#testimonal-box{
+  height: 150px;
+  background: #FFFFFF;
+box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.12), 4px 4px 8px rgba(0, 0, 0, 0.12);
+border-radius: 10px;
+font-size: 1rem;
+}
+#testimonal-name{
+  color: #6d55f1;
+  text-align: left;
+
+}
+#testimonal-company{
+  color: rgb(35, 235, 35);
+  text-align: left;
+}
+#testimonal-text{
+  text-align: left;
+  margin: 0;
+  
+}
