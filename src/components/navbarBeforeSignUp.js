@@ -3,9 +3,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
 import {useState}  from 'react';
 import Login from '../screens/login';
+import Signup from '../screens/signup';
+import { useHistory } from "react-router-dom";
 
 function NavbarBeforeSignUp() {
     let [popUp, setPopUp] = useState(false);
+    const history = useHistory();
     //const [modalShow, setModalShow] = React.useState(false);
     return (
 
@@ -18,7 +21,7 @@ function NavbarBeforeSignUp() {
                             show={popUp}
                             onHide={()=> setPopUp(false)}
                         />
-                        <Button id= "btn-outline"  className="btn m-2 primary bg-light" >Sign Up</Button>
+                        <Button id= "btn-outline"  className="btn m-2 primary bg-light" onClick={()=>history.push('/signup')}>Sign Up</Button>
                     </div>
             </Navbar>
         </div>
