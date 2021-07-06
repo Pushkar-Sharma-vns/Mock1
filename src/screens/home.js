@@ -1,4 +1,4 @@
-import  Button  from 'react-bootstrap/Button';
+import Button  from 'react-bootstrap/Button';
 import React from 'react'
 import NavbarBeforeSignUp from '../components/navbarBeforeSignUp'
 import Testimonials from '../components/testimonials';
@@ -46,7 +46,7 @@ const Home = () => {
             {/* testimonals */}
             <Testimonials/>
             {/* links */}
-            <div className="row pl-5">
+            <div className="row pl-3">
                 <div className="col-4">
                     <Button variant="link">Become a mentor</Button>
                 </div>
