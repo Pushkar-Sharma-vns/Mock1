@@ -4,7 +4,7 @@ const Testimonials = () => {
     return (
         <div className="testimonals container-fluid ">
             <div>Testimonals:</div>
-            <div className="row mb-1">
+            <div className="row ml-2 pl-3">
                 <div id="testimonal-box" className= "col-5 m-3">
                     <div className="row">
                         <div className="col-2">
