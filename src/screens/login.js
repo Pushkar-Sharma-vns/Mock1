@@ -1,6 +1,7 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import { Button } from 'react-bootstrap'
+import logo from '../assets/navBrand.png'
 
 const Login = (props) => {
     return ( 
@@ -11,7 +12,7 @@ const Login = (props) => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-        <div className="p-4" id= "nav-brand" style={{"text-align":"center", "fontSize":"30px"}} >prep4<span style={{ "fontSize":"30px"}} className="span">PM</span></div>
+        <div className="p-4" id= "nav-brand" style={{"text-align":"center", "fontSize":"30px"}} >prep4<span style={{ "fontSize":"30px"}} className="span">PM</span><img src={logo} style={{width:40, marginTop: -7}} /></div>
  
         <div style={{"text-align":"center"}} className="p-1"><input  type="email" placeholder="Enter email" /></div>
         <div  style={{"text-align":"center"}} className="p-1"><input type="password" placeholder="Password" /></div>
@@ -22,4 +23,4 @@ const Login = (props) => {
     )
 }
 
-export default Login
+export default Login;

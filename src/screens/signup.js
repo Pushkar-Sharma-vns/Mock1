@@ -1,7 +1,7 @@
 import React from 'react'
 import { useHistory } from "react-router-dom";
 import { Button } from 'react-bootstrap'
-
+import logo from '../assets/navBrand.png'
 
 const Signup = () => {
   const history = useHistory();
@@ -9,7 +9,7 @@ const Signup = () => {
     <div className="p-3">
       <div className="row pl-3" style={{ "text-align": "center" }}>
         <div className=" col-4" >
-          <div className="p-4" id="nav-brand" style={{ "text-align": "left", "fontSize": "60px" }} >prep4<span style={{ "fontSize": "60px" }} className="span">PM</span></div>
+          <div className="p-4" id="nav-brand" style={{ "text-align": "left", "fontSize": "50px" }} >prep4<span style={{ "fontSize": "50px" }} className="span">PM</span><img src={logo} style={{width:60, marginTop: -7}} /></div>
           <div className="p-4" style={{ "text-align": "left", "fontSize": "30px" }} >
             Become a Part of <strong>PM</strong> Community.
           </div>

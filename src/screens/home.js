@@ -12,7 +12,7 @@ const Home = () => {
     return (
         
         <div className="p-4">
-            <NavbarAfterSignUp/>
+            <NavbarBeforeSignUp/>
             {/* build actual products */}
             <div className= "row container-fluid">
             {/* left side */}

@@ -1,4 +1,5 @@
 import React from 'react'
+import image from '../assets/PM.jpg'
 
 const Testimonials = () => {
     return (
@@ -7,8 +8,9 @@ const Testimonials = () => {
             <div className="row ml-2 pl-3">
                 <div id="testimonal-box" className= "col-5 m-3">
                     <div className="row">
-                        <div className="col-2">
-                         {/* image */}
+                        <div className="col-2 p-2">
+                        {/* image */}
+                        <img id="testimonal-img" src={image} alt="Avatar"/>
                         </div>
                         <div className="col-10 justify-content-left">
                             <div id="testimonal-name">Name</div>
@@ -21,8 +23,9 @@ const Testimonials = () => {
                 </div>
                 <div id="testimonal-box" className= "col-5 m-3">
                     <div className="row">
-                    <div className="col-2">
+                    <div className="col-2 p-2">
                          {/* image */}
+                         <img id="testimonal-img" src={image} alt="Avatar"/>
                         </div>
                         <div className="col-10 justify-content-left">
                             <div id="testimonal-name">Name</div>

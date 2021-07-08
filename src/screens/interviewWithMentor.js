@@ -2,6 +2,8 @@ import React from 'react'
 import Button from 'react-bootstrap/Button'
 import NavbarBrand from '../components/navbarBrand';
 import Dropdown from 'react-bootstrap/Dropdown'
+import image from '../assets/PM.jpg';
+import Card from '../components/card';
 
 const InterviewWithMentor = () => {
     return (
@@ -20,9 +22,9 @@ const InterviewWithMentor = () => {
                 <div className="col-6">
                     <div className="row">
                         <div className="col-4" >
-                        <div id="dropdown">
+                        <div  id="dropdown" style={{ "fontSize":"12px"}}>
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px"}}>
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
                                 All
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -34,7 +36,7 @@ const InterviewWithMentor = () => {
                         </div>
                         <div id="dropdown">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px"}}>
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
                                 Company
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -46,7 +48,7 @@ const InterviewWithMentor = () => {
                         </div>
                         <div id="dropdown">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px"}}>
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
                                 Role
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -58,7 +60,7 @@ const InterviewWithMentor = () => {
                         </div>
                         <div id="dropdown">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px"}}>
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
                                 Domain
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
@@ -72,62 +74,32 @@ const InterviewWithMentor = () => {
                         <div className="col-8">
                             <div className="row">
                                 <div className="col-6" style={{"textAlign":"center"}}>
-                                    <div id="card"  >
-                                        <div className="p-1">
-                                            {/* image */}
-                                        </div>
-                                        <div className="p-1" style={{"fontWeight":"bold"}}>
-                                            Name
-                                        </div>
-                                        <div className ="p-1" style={{color:"#808080"}}>
-                                            <div>pm @ google</div>
-                                            <div>17 year Exp.</div>
-                                            <div>Rating 4.5/5</div>
-                                            <div>25 sessions token</div>
-                                            <div>Rs. 1800/session</div>
-                                        </div>
-                                    </div>
-                                    <div  className="btn sm p-2" >
-                                    <Button id="btn-practice" style={{"padding": "3px 10px"}} >Book</Button>
-                                    </div>
-                                    <div id="card"  >
-                                        <div className="p-1">
-                                            {/* image */}
-                                        </div>
-                                        <div className="p-1" style={{"fontWeight":"bold"}}>
-                                            Name
-                                        </div>
-                                        <div className ="p-1" style={{color:"#808080"}}>
-                                            <div>pm @ google</div>
-                                            <div>17 year Exp.</div>
-                                            <div>Rating 4.5/5</div>
-                                            <div>25 sessions token</div>
-                                            <div>Rs. 1800/session</div>
-                                        </div>
-                                    </div>
-                                    <div  className="btn sm p-2" >
-                                    <Button id="btn-practice" style={{"padding": "3px 10px"}} >Book</Button>
-                                    </div>
+                                    <Card
+                                        name="name"
+                                        company="PM @ Google"
+                                        experience="17 year Exp."
+                                        rating="Rating 4.5/5"
+                                        sessions="25 sessions taken"
+                                        price="Rs. 1800/session"
+                                    />
+                                    <Card
+                                         name="name"
+                                        company="PM @ Google"
+                                        experience="17 year Exp."
+                                        rating="Rating 4.5/5"
+                                        sessions="25 sessions taken"
+                                        price="Rs. 1800/session"
+                                    />
                                 </div>
                                 <div className="col-6" style={{"textAlign":"center"}}>
-                                <div id="card"  >
-                                        <div className="p-1">
-                                            {/* image */}
-                                        </div>
-                                        <div className="p-1" style={{"fontWeight":"bold"}}>
-                                            Name
-                                        </div>
-                                        <div className ="p-1" style={{color:"#808080"}}>
-                                            <div>pm @ google</div>
-                                            <div>17 year Exp.</div>
-                                            <div>Rating 4.5/5</div>
-                                            <div>25 sessions token</div>
-                                            <div>Rs. 1800/session</div>
-                                        </div>
-                                    </div>
-                                    <div  className="btn sm p-2" >
-                                    <Button id="btn-practice" style={{"padding": "3px 10px"}} >Book</Button>
-                                    </div>
+                                    <Card
+                                         name="name"
+                                        company="PM @ Google"
+                                        experience="17 year Exp."
+                                        rating="Rating 4.5/5"
+                                        sessions="25 sessions taken"
+                                        price="Rs. 1800/session"
+                                    />
                                     <div className="pt-5" >
                                     <a  href="url">VIEW ALL MENTORS</a> 
                                     </div>
