@@ -1,10 +1,10 @@
-import NavbarBeforeSignUp from './components/navbarBeforeSignUp';
-import NavbarAfterSignUp from './components/navbarAfterSignUp';
+
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './screens/home';
 import Signup from './screens/signup';
+import InterviewWithMentor from "./screens/interviewWithMentor";
 
 function App() {
   return (
@@ -20,6 +20,11 @@ function App() {
 	  			path="/"
 	  			component={Home}
 	  		/>
+			  <Route
+				 exact={true}
+	  			path="/interviewWithMentor"
+	  			component={InterviewWithMentor} 
+			  />
 	  	</Switch>
   	</BrowserRouter>
   );

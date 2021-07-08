@@ -1,15 +1,18 @@
 import Button  from 'react-bootstrap/Button';
 import React from 'react'
 import NavbarBeforeSignUp from '../components/navbarBeforeSignUp'
+import NavbarAfterSignUp from '../components/navbarAfterSignUp'
 import Testimonials from '../components/testimonials';
+import { useHistory } from "react-router-dom";
 
 
 
 const Home = () => {
-    
+    const history = useHistory();
     return (
+        
         <div className="p-4">
-            <NavbarBeforeSignUp/>
+            <NavbarAfterSignUp/>
             {/* build actual products */}
             <div className= "row container-fluid">
             {/* left side */}
@@ -25,7 +28,7 @@ const Home = () => {
                     </div>
                     <div className= "row">
                         <div className="col-3 ml-5 p-3">
-                            <Button id="btn-practice" className="btn">Practice Ground</Button>
+                            <Button id="btn-practice" className="btn"  onClick={()=>history.push('/interviewWithMentor')}>Practice Ground</Button>
                         </div>
                         <div className="col-3 ml-5 p-3">
                             <Button id="btn-practice" className="btn" >Interview Substack</Button>
