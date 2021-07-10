@@ -5,9 +5,10 @@ import Dropdown from 'react-bootstrap/Dropdown'
 import image from '../assets/PM.jpg';
 import Card from '../components/card';
 
+
 const InterviewWithMentor = () => {
     return (
-        <div className="pt-2 pl-5 pr-5 pb-2" >
+        <div className="pt-2 pl-5 pr-5 pb-2" id="interview-with-mentor" >
             <NavbarBrand/>
             <div className= "heading-starting" style={{"color":"black", "font":"Poppins"}}>
             Practice Interviews with Industry Experts

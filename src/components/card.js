@@ -1,7 +1,10 @@
 import React from 'react'
 import image from '../assets/PM.jpg';
 import Button from 'react-bootstrap/Button';
+import { useHistory } from 'react-router-dom';
+
 const Card = (props) => {
+    const history = useHistory();
     return (
         <div>
             <div id="card" className="p-1" >
@@ -21,7 +24,7 @@ const Card = (props) => {
             </div>
         </div>
         <div  className="btn sm p-2" >
-        <Button id="btn-practice" style={{"padding": "3px 10px"}} >Book</Button>
+        <Button id="btn-practice" style={{"padding": "3px 10px"}} onClick={()=> history.push('/bookMock')} >Book</Button>
         </div>
         </div>
     )

@@ -5,13 +5,11 @@ import NavbarAfterSignUp from '../components/navbarAfterSignUp'
 import Testimonials from '../components/testimonials';
 import { useHistory } from "react-router-dom";
 
-
-
 const Home = () => {
     const history = useHistory();
     return (
         
-        <div className="p-4">
+        <div className="p-4" id="home">
             <NavbarBeforeSignUp/>
             {/* build actual products */}
             <div className= "row container-fluid">
@@ -51,7 +49,7 @@ const Home = () => {
             {/* links */}
             <div className="row pl-3">
                 <div className="col-4">
-                    <Button variant="link">Become a mentor</Button>
+                    <Button variant="link" onClick={()=>history.push('/signup')}>Become a mentor</Button>
                 </div>
                 <div className="col-4">
                     <Button variant="link">Submit Your Interview Experience</Button>

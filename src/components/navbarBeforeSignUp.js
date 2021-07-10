@@ -1,16 +1,14 @@
 import React from 'react'
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button'
+import {Navbar, Button} from 'react-bootstrap';
 import {useState}  from 'react';
 import Login from '../screens/login';
-import Signup from '../screens/signup';
 import logo from '../assets/navBrand.png'
 import { useHistory } from "react-router-dom";
 
 function NavbarBeforeSignUp() {
     let [popUp, setPopUp] = useState(false);
     const history = useHistory();
-    //const [modalShow, setModalShow] = React.useState(false);
+    
     return (
 
         <div>

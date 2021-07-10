@@ -16,8 +16,7 @@ const Testimonials = () => {
                             <div id="testimonal-name">Name</div>
                             <div id="testimonal-company">Post @ Company</div>
                             <div id= "testimonal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                                numquam.</div>
+                                molestiae quas vel sint commodi repudiandae.</div>
                         </div>
                     </div>
                 </div>
@@ -31,8 +30,7 @@ const Testimonials = () => {
                             <div id="testimonal-name">Name</div>
                             <div id="testimonal-company">Post @ Company</div>
                             <div id= "testimonal-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                                numquam.</div>
+                                molestiae quas vel sint commodi repudiandae.</div>
                         </div>
                     </div>
                 </div>
