@@ -22,7 +22,6 @@ const Home = () => {
                     Product Management is a hands-on role! We believe the best way to learn & showcase your intent for a PM role is by building actual products & living through the challenges of a real-life PM. 
                     Theoretical readings/courses will only take you halfway through the learning curve. 
                     So, we built <strong>heyPM</strong> to bridge that gap & address the other half, to help you cross the finish line.
-
                     </div>
                     <div className= "row">
                         <div className="col-3 ml-5 p-3">
