@@ -20,7 +20,6 @@ const Login = (props) => {
         <Link to="/signup">Register</Link>
         <div className="p-3 " style={{ "fontSize":"10px"}} >*Privacy & Security Terms*</div>
     </Modal>
-    
     </>
     )
 }
