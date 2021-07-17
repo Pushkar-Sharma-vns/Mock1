@@ -127,8 +127,15 @@ html, body {
 #card{
   border-radius:10px;
   font-size:14px;
-  box-shadow: -4px -4px 8px rgba(0, 0, 0, 0.12), 4px 4px 8px rgba(0, 0, 0, 0.12);
-border-radius: 10px;
+  box-shadow: -4px -4px 8px rgba(112, 101, 101, 0.12), 4px 4px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+ 
+}
+.item-container{
+  width: 30%;
+  flex: auto;
+  flex-direction: row;
+  padding: 5px;
 }
 /*  right side image */
 #img-mentor{

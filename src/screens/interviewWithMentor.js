@@ -1,120 +1,139 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button'
+import React, { useEffect } from 'react'
+import { Button } from 'react-bootstrap'
 import NavbarBrand from '../components/navbarBrand';
 import Dropdown from 'react-bootstrap/Dropdown'
 import image from '../assets/PM.jpg';
 import Card from '../components/card';
-
+import JSONDATA from '../assets/details.json'
 
 const InterviewWithMentor = () => {
+    const mentorList = JSONDATA;
+    const [filterdMentorList, setFilterdMentorList] = React.useState(JSONDATA);
+    let [company, setCompany] = React.useState([]);
+    let [domain, setDomain] = React.useState([]);
+    let [role, setRole] = React.useState([]);
+    let [filteredCompany, setFilteredCompany] = React.useState();
+    let [filteredDomain, setFilteredDomain] = React.useState();
+    let [filteredRole, setFilteredRole] = React.useState();
+    useEffect(() => {
+        let companies = [];
+        let domains = [];
+        let roles = [];
+        mentorList.map(each => {
+            if (companies.indexOf(each.company) == -1) {
+                companies.push(each.company);
+            }
+            if (domains.indexOf(each.domain) == -1) {
+                domains.push(each.domain);
+            }
+            if (roles.indexOf(each.role) == -1) {
+                roles.push(each.role);
+            }
+        });
+
+        setCompany(companies);
+        setDomain(domains);
+        setRole(roles);
+    }, [])
+    
+    const filterListForCompany = (value) => {
+        let originalFilteredList = filteredCompany ? [...mentorList] : [...filterdMentorList];
+        setFilteredCompany(value);
+        let filteredList = originalFilteredList.filter(each => {
+            return each.company == value && (!filteredDomain || filteredDomain == each.domain) && (!filteredRole || filteredRole == each.role);
+        })
+        setFilterdMentorList(filteredList);
+    }
+
+    const filterListForDomain = (value) => {
+        let originalFilteredList = filteredDomain ? [...mentorList] : [...filterdMentorList];
+        setFilteredDomain(value);
+        let filteredList = originalFilteredList.filter(each => {
+            return each.domain == value && (!filteredCompany || filteredCompany == each.company) && (!filteredRole || filteredRole == each.role);
+        })
+        setFilterdMentorList(filteredList);
+    }
+
+    const filterListForRole = (value) => {
+        let originalFilteredList = filteredRole ? [...mentorList] : [...filterdMentorList];
+        setFilteredRole(value);
+        let filteredList = originalFilteredList.filter(each => {
+            return each.role == value && (!filteredDomain || filteredDomain == each.domain) && (!filteredCompany || filteredCompany == each.company);
+        })
+        setFilterdMentorList(filteredList);
+    }
+
     return (
         <div className="pt-2 pl-5 pr-5 pb-2" id="interview-with-mentor" >
-            <NavbarBrand/>
-            <div className= "heading-starting" style={{"color":"black", "font":"Poppins"}}>
-            Practice Interviews with Industry Experts
+            <NavbarBrand />
+            <div className="heading-starting" style={{ "color": "black", "font": "Poppins" }}>
+                Practice Interviews with Industry Experts
             </div>
-            <div style={{paddingLeft:"10px"}}>
-            Mock Interviews with Mentor 
+            <div style={{ paddingLeft: "10px" }}>
+                Mock Interviews with Mentor
             </div>
-            <div style={{paddingLeft:"10px", fontWeight:"bold", paddingTop:"10px"}}>
-            Our Mentor Network:
+            <div style={{ paddingLeft: "10px", fontWeight: "bold", paddingTop: "10px" }}>
+                Our Mentor Network:
             </div>
             <div className="row">
-                <div className="col-6">
-                    <div className="row">
-                        <div className="col-4" >
-                        <div  id="dropdown" style={{ "fontSize":"12px"}}>
+                <div className="col-2" >
+                    <div id="dropdown" style={{ "fontSize": "12px" }}>
+                        <Button id="btn-outline" className="btn m-2 primary bg-light" onClick={() => { setFilterdMentorList(JSONDATA) }}>
+                            All
+                        </Button>
+                    </div>
+                    <div id="dropdown">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
-                                All
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{ "white-space": "nowrap", "minWidth": "120px", "fontSize": "14px" }}>
+                                {filteredCompany ? filteredCompany : "Company"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                {company.map(each => {
+                                    return <Dropdown.Item onClick={() => { filterListForCompany(each) }}>{each}</Dropdown.Item>
+                                })}
                             </Dropdown.Menu>
                         </Dropdown>
-                        </div>
-                        <div id="dropdown">
+                    </div>
+                    <div id="dropdown">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
-                                Company
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{ "white-space": "nowrap", "minWidth": "120px", "fontSize": "14px" }}>
+                                {filteredDomain ? filteredDomain : "Domain"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                {domain.map(each => {
+                                    return <Dropdown.Item onClick={() => { filterListForDomain(each) }}>{each}</Dropdown.Item>
+                                })}
                             </Dropdown.Menu>
                         </Dropdown>
-                        </div>
-                        <div id="dropdown">
+                    </div>
+                    <div id="dropdown">
                         <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
-                                Role
+                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{ "white-space": "nowrap", "minWidth": "120px", "fontSize": "14px" }}>
+                                {filteredRole ? filteredRole : "Role"}
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                {role.map(each => {
+                                    return <Dropdown.Item onClick={() => { filterListForRole(each) }}>{each}</Dropdown.Item>
+                                })}
                             </Dropdown.Menu>
                         </Dropdown>
-                        </div>
-                        <div id="dropdown">
-                        <Dropdown>
-                            <Dropdown.Toggle variant="outline-secondary" id="dropdown-basic" style={{"white-space": "nowrap", "minWidth": "120px", "fontSize":"14px"}}>
-                                Domain
-                            </Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
-                        </div>
-                        </div>
-                        <div className="col-8">
-                            <div className="row">
-                                <div className="col-6" style={{"textAlign":"center"}}>
-                                    <Card
-                                        name="name"
-                                        company="PM @ Google"
-                                        experience="17 year Exp."
-                                        rating="Rating 4.5/5"
-                                        sessions="25 sessions taken"
-                                        price="Rs. 1800/session"
-                                    />
-                                    <Card
-                                         name="name"
-                                        company="PM @ Google"
-                                        experience="17 year Exp."
-                                        rating="Rating 4.5/5"
-                                        sessions="25 sessions taken"
-                                        price="Rs. 1800/session"
-                                    />
-                                </div>
-                                <div className="col-6" style={{"textAlign":"center"}}>
-                                    <Card
-                                         name="name"
-                                        company="PM @ Google"
-                                        experience="17 year Exp."
-                                        rating="Rating 4.5/5"
-                                        sessions="25 sessions taken"
-                                        price="Rs. 1800/session"
-                                    />
-                                    <div className="pt-5" >
-                                    <a  href="url">VIEW ALL MENTORS</a> 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-                <div className="col-6">
-                <img 
-                    id="img-mentor"
-                    src="https://s3-alpha-sig.figma.com/img/8af9/c8c4/967f2b8a96ea95c3e3fe772af51376aa?Expires=1626652800&Signature=d3FPI4ApOUieNLs3oTx3v1mPO6PMdLkOe4SkeE1LDJx9gkSp9c5cMeaxzJOisZag~6Oxa2FoP3qYDV6dN1spxIMv4Vpif2rn7gyTZ71Ejo3-WPQAItoda97WiAOdDYnqAx8W8oFC-IG6KRqLaCw8uWYebFeo2c3S7pLuiguivfItMyyzavNf7H29f6jVn0~lT3UZYPqKE9DkQCvsuxXNg0aDa5mfA4JJ-U5Bscrgny3gQhHJ8xnTcVjs9p10QOPfWCX1EBwMJo57Rca668VfAOoQxk3uXQvGnlMRvfGZlghNvyI~BpGw8aqgMEu6iqodzGmJ643pqoRxPK6HZX9sUQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
-                    alt="interview with mentor image"
-                    />
+                <div className="col-10 " style={{ "textAlign": "center" }}>
+                    <div className="row m-1">
+                        {filterdMentorList.map((details) => (
+                            <Card
+                                key={details.id}
+                                name={details.name}
+                                image={image}
+                                company={details.company}
+                                experience={details.experience}
+                                domain={details.domain}
+                                price={details.price}
+                            />
+                        )
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
