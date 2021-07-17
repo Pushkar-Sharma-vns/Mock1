@@ -9,13 +9,17 @@ const BookMock = () => {
     let [popUp, setPopUp] = React.useState(false);
     const [value, onChange] = React.useState(new Date());
     let [time, setTime] = React.useState("00:00");
+    let str = value.toDateString();
+    const myArr = str.split(" ");
+    let month = myArr[1].toLowerCase();
+    var months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+    month = months.indexOf(month) +1;
     return (
         <div className="pt-2 pl-5 pr-5 pb-4" id="book-interview">
         <div>
             <NavbarBrand/>
         </div>
         <div className="row">
-       
         <div className="col-6">
         <div className= "heading-starting pt-4 pl-4" style={{"color":"black", "font":"Poppins"}}>
             Book a Mock Interview
@@ -52,7 +56,7 @@ const BookMock = () => {
             </div>     
           </div>
         </div>
-        {console.log(time)}
+        {console.log( "date : " + myArr[2]+" "+month + " "+ myArr[3])}
         <div  className="p-5" >
         <Button style={{ "text-align":"center","minWidth": "180px"}} onClick={()=>setPopUp(true)} id= "btn-practice" >Schedule</Button>
         <CongratsPopup
